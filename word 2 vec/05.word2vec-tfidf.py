@@ -15,14 +15,14 @@ print("%d documents  (test set)" % len(X_test.data))
 print("******************************")
 
 
-fileName = "train-vec.pkl"
+fileName = "train-vec1.pkl"
 train_file = open(fileName, 'rb')
 X_train = pickle.load(train_file)
 train_file.close()
 print('Train Set is Loaded')
 
 
-fileName = "test-vec.pkl"
+fileName = "test-vec1.pkl"
 test_file = open(fileName, 'rb')
 X_test = pickle.load(test_file)
 test_file.close()
@@ -31,7 +31,7 @@ print('Test Set is Loaded')
 
 print(X_train.shape)
 
-clf = LogisticRegression(C=100, penalty='l1')
+clf = LogisticRegression(C=25, penalty='l1')
 clf.fit(X_train, Y_train)
 pred = clf.predict(X_test)
 print(confusion_matrix(Y_test, pred))

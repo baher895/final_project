@@ -55,9 +55,9 @@ unique_words_in_test = set([word for doc in tokenized_documents for word in doc]
 model = load_vectors("wiki-news-300d-1M-subword.vec", unique_words_in_test); # model[sample_word] has a 300 dim vector for word "sample_word"
 print('Model for testing Data is loaded %d'%len(model))
 
-X_test = np.concatenate([avg_word_vectors(model, doc, 300,count, "test") for count, doc in enumerate(X_test.data)]) # baraye har document anjam midim
+X_test = np.concatenate([avg_word_vectors(model, doc, 300,count, "test1") for count, doc in enumerate(X_test.data)]) # baraye har document anjam midim
 
-fileName = "test-vec.pkl"
+fileName = "test-vec1.pkl"
 output = open(fileName, 'wb')
 pickle.dump(X_test, output)
 output.close()

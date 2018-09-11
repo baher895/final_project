@@ -1,6 +1,6 @@
 /prove of concepts
-/word 2 vec/test
-/word 2 vec/train
+/word 2 vec/test*
+/word 2 vec/train*
 /word 2 vec/__pycache__
 /word 2 vec/*.pkl
 /word 2 vec/*.vec
