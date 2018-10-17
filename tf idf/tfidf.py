@@ -18,9 +18,10 @@ print("******************************")
 
 vectorizer = TfidfVectorizer( sublinear_tf=True, analyzer='word', ngram_range=(1,2),min_df=1, max_df=0.8, stop_words='english')
 
+# train
 transformed_train = vectorizer.fit_transform(data_train.data) 
-feature_names = vectorizer.get_feature_names() 
 
+# test
 transformed_test  = vectorizer.transform(data_test.data)
 
 print("Vocabulary Size: %d"% len(vectorizer.vocabulary_))
