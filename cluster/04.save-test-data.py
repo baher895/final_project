@@ -74,15 +74,16 @@ print('Test Model loaded!!')
 
 ## prepare test docs
 X_test_docs = []
-doc_vector_test = []
+
 for doc in X_test.data:
-  doc_tokenize = tokenize(doc)
-  for word in doc_tokenize:
-    if word in test_model:
-      doc_vector_test.append(test_model[word])
+    doc_vector_test = []
+    doc_tokenize = tokenize(doc)
+    for word in doc_tokenize:
+        if word in test_model:
+        doc_vector_test.append(test_model[word])
           
-  new_test_doc = convert_to_cluster_distances(doc_vector_test)
-  X_test_docs.append(new_test_doc)
+    new_test_doc = convert_to_cluster_distances(doc_vector_test)
+    X_test_docs.append(new_test_doc)
   
 print('Test Doc is set')
 

@@ -74,15 +74,16 @@ print('Train Model loaded!!')
 
 ## prepare train docs
 X_train_docs = []
-doc_vector_train = []
+
 for doc in X_train.data:
-  doc_tokenize = tokenize(doc)
-  for word in doc_tokenize:
-      if word in train_model:
-          doc_vector_train.append(train_model[word])
+    doc_vector_train = []
+    doc_tokenize = tokenize(doc)
+    for word in doc_tokenize:
+        if word in train_model:
+        doc_vector_train.append(train_model[word])
       
-  new_train_doc = convert_to_cluster_distances(doc_vector_train)
-  X_train_docs.append(new_train_doc)
+    new_train_doc = convert_to_cluster_distances(doc_vector_train)
+    X_train_docs.append(new_train_doc)
   
 print('Train Doc is set')
 
